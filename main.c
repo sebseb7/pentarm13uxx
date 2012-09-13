@@ -33,15 +33,22 @@ int main(void) {
 	
 	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<6);
 
-//	LPC_GPIO0->DIR = (1<<12);	
 	LPC_IOCON->TMS_PIO0_12  &= ~0x07;
 	LPC_IOCON->TMS_PIO0_12  |= 0x01;
+	
+	LPC_IOCON->TRST_PIO0_14  &= ~0x07;
+	LPC_IOCON->TRST_PIO0_14  |= 0x01;
+
+	LPC_GPIO->DIR[0] |= (1<<12);
+	LPC_GPIO->DIR[0] |= (1<<14);
 
 	while(1)
 	{
-//		LPC_GPIO0->DATA |= (1<<12);
+		LPC_GPIO->B0[12] = 1;
+		LPC_GPIO->B0[14] = 0;
 		delay_ms(200);
-//		LPC_GPIO0->DATA = 0;
+		LPC_GPIO->B0[12] = 0;
+		LPC_GPIO->B0[14] = 1;
 		delay_ms(200);
 	}
 }
