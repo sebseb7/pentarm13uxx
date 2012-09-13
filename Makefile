@@ -53,5 +53,5 @@ clean:
 
 flash: firmware.bin
 	cp firmware.bin /Volumes/CRP\ DISABLD/
-	diskutil eject /dev/disk5
+	diskutil eject `diskutil list | grep -B 2 CRP | grep dev`
 
