@@ -3,7 +3,6 @@ PROJECT=template
 LDCRIPT=core/lpc1347.ld
 
 OPTIMIZATION = 2
-DEBUG = -g
 
 #########################################################################
 
@@ -12,9 +11,8 @@ OBJECTS= $(SRC:.c=.o)
 HEADERS=$(wildcard core/*.h *.h) 
 
 #  Compiler Options
-GCFLAGS = -std=gnu99 -Wall -fno-common -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) $(DEBUG) -I. -Icore  
-# -ffunction-sections -fdata-sections -fmessage-length=0   -fno-builtin
-LDFLAGS = -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -nostartfiles -T$(LDCRIPT) 
+GCFLAGS = -std=gnu99 -Wall -fno-builtin -ffunction-sections -fdata-sections -fno-common -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -I. -Icore 
+LDFLAGS = -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -nostartfiles -nostdlib -nodefaultlibs -T$(LDCRIPT) 
 
 #  Compiler/Assembler Paths
 GCC = arm-none-eabi-gcc
