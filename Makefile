@@ -2,7 +2,7 @@ PROJECT=template
 
 LDCRIPT=core/lpc1347.ld
 
-OPTIMIZATION = 2
+OPTIMIZATION = 1
 
 #########################################################################
 
