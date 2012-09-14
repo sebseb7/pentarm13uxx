@@ -6,13 +6,13 @@ OPTIMIZATION = 1
 
 #########################################################################
 
-SRC=$(wildcard core/*.c *.c) 
+SRC=$(wildcard core/*.c usb/*.c *.c) 
 OBJECTS= $(SRC:.c=.o) 
 LSSFILES= $(SRC:.c=.lst) 
-HEADERS=$(wildcard core/*.h *.h) 
+HEADERS=$(wildcard core/*.h usb/*.h *.h) 
 
 #  Compiler Options
-GCFLAGS = -ffreestanding -std=gnu99 -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -I. -Icore 
+GCFLAGS = -ffreestanding -std=gnu99 -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -I. -Icore -Iusb
 # Warnings
 GCFLAGS += -Wstrict-prototypes -Wundef -Wall -Wextra -Wunreachable-code  
 # Optimizazions
