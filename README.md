@@ -14,11 +14,12 @@ also includes eagle files for a small breaboardable eval-board
 
 
 * 8k+2k+2k sram
-* 64k flash
+* 64k flash (was 32k)
+* 4k EEPROM (new)
 * 72Mhz
 * USART,I2C,2xSPI
-* 12Bit ADC
-* USB_MSC, USB_HID, USB_CDC and USB_DFU in rom
+* 12Bit ADC (new)
+* USB_MSC, USB_HID, USB_CDC and USB_DFU in rom (new)
 * usb-bootloader in rom
 
 - - -
