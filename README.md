@@ -13,7 +13,7 @@ also includes eagle files for a small breaboardable eval-board
 ####lpc1347 features
 
 
-* 8k+2k+2k sram
+* 12k sram (was 8k)
 * 64k flash (was 32k)
 * 4k EEPROM (new)
 * 72Mhz
