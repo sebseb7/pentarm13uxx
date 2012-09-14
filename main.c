@@ -31,14 +31,16 @@ int main(void) {
 	SystemCoreClockUpdate();
 	SysTick_Config(SystemCoreClock/1000);
 	
+	// clock to GPIO
 	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<6);
 
+	// configure the two LEDs PINs as GPIO (they default to jtag)
 	LPC_IOCON->TMS_PIO0_12  &= ~0x07;
 	LPC_IOCON->TMS_PIO0_12  |= 0x01;
-	
 	LPC_IOCON->TRST_PIO0_14  &= ~0x07;
 	LPC_IOCON->TRST_PIO0_14  |= 0x01;
 
+	//data direction: output
 	LPC_GPIO->DIR[0] |= (1<<12);
 	LPC_GPIO->DIR[0] |= (1<<14);
 
