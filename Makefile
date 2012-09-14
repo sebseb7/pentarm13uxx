@@ -2,21 +2,29 @@ PROJECT=template
 
 LDCRIPT=core/lpc1347.ld
 
-OPTIMIZATION = 2
-DEBUG = -g
+OPTIMIZATION = 1
 
 #########################################################################
 
 SRC=$(wildcard core/*.c *.c) 
 OBJECTS= $(SRC:.c=.o) 
+LSSFILES= $(SRC:.c=.lst) 
 HEADERS=$(wildcard core/*.h *.h) 
 
 #  Compiler Options
-GCFLAGS = -std=gnu99 -Wall -fno-common -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) $(DEBUG) -I. -Icore  
-# -ffunction-sections -fdata-sections -fmessage-length=0   -fno-builtin
-LDFLAGS = -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -nostartfiles -T$(LDCRIPT) 
+GCFLAGS = -ffreestanding -std=gnu99 -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -I. -Icore 
+# Warnings
+GCFLAGS += -Wstrict-prototypes -Wundef -Wall -Wextra -Wunreachable-code  
+# Optimizazions
+GCFLAGS += -fsingle-precision-constant -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -fno-builtin -ffunction-sections -fdata-sections -fno-common
+# Debug stuff
+GCFLAGS += -Wa,-adhlns=$(<:.c=.lst),-gstabs -g 
 
-#  Compiler/Assembler Paths
+
+LDFLAGS =  -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -nostartfiles -nostdlib -nodefaultlibs -T$(LDCRIPT) 
+
+
+#  Compiler/Linker Paths
 GCC = arm-none-eabi-gcc
 OBJCOPY = arm-none-eabi-objcopy
 REMOVE = rm -f
@@ -40,8 +48,10 @@ stats: $(PROJECT).elf Makefile
 
 clean:
 	$(REMOVE) $(OBJECTS)
+	$(REMOVE) $(LSSFILES)
 	$(REMOVE) firmware.bin
 	$(REMOVE) $(PROJECT).elf
+	$(REMOVE) $(PROJECT).map
 	make -C tools/lpcrc clean
 
 #########################################################################
@@ -53,5 +63,5 @@ clean:
 
 flash: firmware.bin
 	cp firmware.bin /Volumes/CRP\ DISABLD/
-	diskutil eject /dev/disk5
+	diskutil eject `diskutil list | grep -B 2 CRP | grep dev`
 

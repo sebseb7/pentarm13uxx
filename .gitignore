@@ -1,4 +1,5 @@
 *.o
+*.lst
 *.bin
 *.elf
 tools/lpcrc/lpcrc
