@@ -120,7 +120,7 @@ ErrorCode_t VCOM_bulk_out_hdlr(USBD_HANDLE_T hUsb, void* data, uint32_t event)
 
 			LPC_GPIO->B0[12] ^= 1;
 			pVcom->rxlen = pUsbApi->hw->ReadEP(hUsb, USB_CDC_EP_BULK_OUT, pVcom->rxBuf);
-			pVcom->rxBuf[0] = pVcom->rxlen;
+			//pVcom->rxBuf[0] = pVcom->rxlen;
 			pUsbApi->hw->WriteEP (pVcom->hUsb, USB_CDC_EP_BULK_IN, pVcom->rxBuf, pVcom->rxlen);     
 			//	if (pVcom->rxlen == 0) {
 			//        pVcom->rxlen = pUsbApi->hw->ReadEP(hUsb, USB_CDC_EP_BULK_OUT, pVcom->rxBuf);
@@ -228,12 +228,14 @@ int main(void) {
 
 	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<6);
 
+	// configure the two LEDs PINs as GPIO (they default to jtag)
 	LPC_IOCON->TMS_PIO0_12  &= ~0x07;
 	LPC_IOCON->TMS_PIO0_12  |= 0x01;
-
+	
 	LPC_IOCON->TRST_PIO0_14  &= ~0x07;
 	LPC_IOCON->TRST_PIO0_14  |= 0x01;
 
+	//data direction: output
 	LPC_GPIO->DIR[0] |= (1<<12);
 	LPC_GPIO->DIR[0] |= (1<<14);
 	while(1)

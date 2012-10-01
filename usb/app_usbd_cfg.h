@@ -30,8 +30,8 @@
 /* LPC13Uxx is full speed only */
 #define FULL_SPEED_ONLY
 
-#define CDC_MEM_BASE           0x20004000
-#define CDC_MEM_SIZE           0x00000800
+#define CDC_MEM_BASE           0x20000000
+#define CDC_MEM_SIZE           0x00001000
 #define USB_CDC_CIF_NUM   0
 #define USB_CDC_DIF_NUM   1
 #define USB_CDC_EP_BULK_IN   USB_ENDPOINT_IN(2)
