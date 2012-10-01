@@ -41,7 +41,7 @@ firmware.bin: $(PROJECT).elf Makefile
 	$(OBJCOPY) -R .stack -O binary $(PROJECT).elf firmware.bin
 	tools/lpcrc/lpcrc firmware.bin
 $(PROJECT).elf: $(OBJECTS) Makefile
-	@echo "  \033[1;34mLD \033[0m $(PROJECT).elf"
+	@echo "  \033[1;34mLD \033[0m (\033[1;33m $(OBJECTS)\033[0m) -> $(PROJECT).elf"
 	@$(GCC) $(LDFLAGS) $(OBJECTS) -o $(PROJECT).elf
 
 stats: $(PROJECT).elf Makefile
