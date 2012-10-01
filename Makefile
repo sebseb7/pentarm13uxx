@@ -41,7 +41,8 @@ firmware.bin: $(PROJECT).elf Makefile
 	$(OBJCOPY) -R .stack -O binary $(PROJECT).elf firmware.bin
 	tools/lpcrc/lpcrc firmware.bin
 $(PROJECT).elf: $(OBJECTS) Makefile
-	$(GCC) $(LDFLAGS) $(OBJECTS) -o $(PROJECT).elf
+	@echo "  \033[1;34mLD \033[0m $(PROJECT).elf"
+	@$(GCC) $(LDFLAGS) $(OBJECTS) -o $(PROJECT).elf
 
 stats: $(PROJECT).elf Makefile
 	$(SIZE) $(PROJECT).elf
@@ -57,11 +58,15 @@ clean:
 #########################################################################
 
 %.o: %.c Makefile $(HEADERS)
-	$(GCC) $(GCFLAGS) -o $@ -c $<
+	@echo "  \033[1;34mGCC\033[0m $<"
+	@$(GCC) $(GCFLAGS) -o $@ -c $<
 
 #########################################################################
 
 flash: firmware.bin
 	cp firmware.bin /Volumes/CRP\ DISABLD/
 	diskutil eject `diskutil list | grep -B 2 CRP | grep dev`
+
+
+.PHONY : clean all flash
 
