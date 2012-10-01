@@ -120,7 +120,7 @@ ErrorCode_t VCOM_bulk_out_hdlr(USBD_HANDLE_T hUsb, void* data, uint32_t event)
 
 			LPC_GPIO->B0[12] ^= 1;
 			pVcom->rxlen = pUsbApi->hw->ReadEP(hUsb, USB_CDC_EP_BULK_OUT, pVcom->rxBuf);
-			pVcom->rxBuf[pVcom->rxlen++] = pVcom->rxlen;
+			pVcom->rxBuf[0] = pVcom->rxlen;
 			pUsbApi->hw->WriteEP (pVcom->hUsb, USB_CDC_EP_BULK_IN, pVcom->rxBuf, pVcom->rxlen);     
 			//	if (pVcom->rxlen == 0) {
 			//        pVcom->rxlen = pUsbApi->hw->ReadEP(hUsb, USB_CDC_EP_BULK_OUT, pVcom->rxBuf);
