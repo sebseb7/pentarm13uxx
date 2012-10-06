@@ -1,6 +1,6 @@
-#include "i2c.h"
-#include "reverse.h"
-#include "n35p112.h"
+#include "drivers/i2c.h"
+#include "libs/reverse.h"
+#include "drivers/n35p112.h"
 
 extern volatile uint32_t I2CCount;
 extern volatile uint8_t I2CMasterBuffer[BUFSIZE];
