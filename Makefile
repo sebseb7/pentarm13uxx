@@ -9,11 +9,14 @@ OPTIMIZATION = 1
 SRC=$(wildcard core/*.c *.c)
 
 #DRIVERS to USE:
-#SRC+= drivers/ssd1351.c drivers/display/circle.c drivers/display/font8x6.c drivers/display/text.c drivers/display/wuline.c 
-#SRC+= libs/stdio.c
+SRC+= drivers/ssd1351.c drivers/display/circle.c drivers/display/font8x6.c drivers/display/text.c drivers/display/wuline.c 
+SRC+= libs/stdio.c
+SRC+= libs/string.c
 #SRC+= drivers/n35p112.c
-#SRC+= drivers/i2c.c
-#SRC+= libs/reverse.c
+SRC+= drivers/bmp085.c
+SRC+= drivers/i2c.c
+SRC+= drivers/usb_cdc.c drivers/usb/cdc_desc.c
+SRC+= libs/reverse.c
 
 OBJECTS= $(SRC:.c=.o) 
 LSSFILES= $(SRC:.c=.lst) 
@@ -26,17 +29,17 @@ GCFLAGS = -std=gnu99 -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -I. -Icore
 GCFLAGS += -Wstrict-prototypes -Wundef -Wall -Wextra -Wunreachable-code  
 # Optimizazions
 #GCFLAGS += -fsingle-precision-constant -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -fno-builtin -fno-common
-GCFLAGS += -fsingle-precision-constant -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
+GCFLAGS += -fsingle-precision-constant -funsigned-char -funsigned-bitfields -fshort-enums
 
 #disabled due to problems with the font
 #GCFLAGS += -ffunction-sections -fdata-sections
 
 # Debug stuff
-GCFLAGS += -Wa,-adhlns=$(<:.c=.lst),-gstabs -g 
+#GCFLAGS += -Wa,-adhlns=$(<:.c=.lst),-gstabs -g 
 
 
 #LDFLAGS =  -lm -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -nostartfiles -nostdlib -nodefaultlibs -T$(LDCRIPT) 
-LDFLAGS =  -lm -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -nostartfiles  -T$(LDCRIPT) 
+LDFLAGS =  -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -nostartfiles  -T$(LDCRIPT) 
 
 
 #  Compiler/Linker Paths
@@ -57,7 +60,7 @@ firmware.bin: $(PROJECT).elf Makefile
 	tools/lpcrc/lpcrc firmware.bin
 $(PROJECT).elf: $(OBJECTS) Makefile
 	@echo "  \033[1;34mLD \033[0m (\033[1;33m $(OBJECTS)\033[0m) -> $(PROJECT).elf"
-	@$(GCC) $(LDFLAGS) $(OBJECTS) -o $(PROJECT).elf
+	@$(GCC) $(LDFLAGS) $(OBJECTS) -o $(PROJECT).elf -lm
 	arm-none-eabi-strip -s $(PROJECT).elf
 
 stats: $(PROJECT).elf Makefile

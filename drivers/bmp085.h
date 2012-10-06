@@ -26,5 +26,10 @@ int16_t ac1,ac2,ac3,b1,b2,mb,mc,md;               // cal data
 uint16_t ac4,ac5,ac6;                     // cal data
 long b5;                                      // temperature data
 
+void BMP085_readPressure(void);
+void BMP085_readTemperature(void);
+void BMP085_getCalData(void);
+
+
 
 #endif

@@ -21,17 +21,6 @@ static void i2cWrite(uint8_t reg, uint8_t value)
 	I2CMasterBuffer[2] = value;
 	I2CEngine();
 }
-static uint8_t i2cRead(uint8_t reg)
-{
-	I2CSlaveBuffer[0]=0;
-	I2CWriteLength = 2;
-	I2CReadLength = 1;
-	I2CMasterBuffer[0] = reverse8(0x77);
-	I2CMasterBuffer[1] = reg;
-	I2CMasterBuffer[2] = reverse8(0x77) | RD_BIT;
-	I2CEngine();
-	return I2CSlaveBuffer[0];
-}
 static uint16_t i2cRead16(uint8_t reg)
 {
 	I2CSlaveBuffer[0]=0;
@@ -91,9 +80,8 @@ void BMP085_readTemperature(void){
 
 	//read Raw Temperature
 	i2cWrite(CONTROL, READ_TEMPERATURE);
-	delay_ms(5);                          // min. 4.5ms read Temp delay
+	delay_ms(7);                          // min. 4.5ms read Temp delay
 	ut = i2cReads16(0xF6);
-	//draw_number_8x6(60,20, ut, 6,0,255,255,255);
 
 	// calculate temperature
 	x1 = ((long)ut - ac6) * ac5 >> 15;
@@ -110,15 +98,8 @@ void BMP085_readPressure(void) {
 	//read Raw Pressure
 	i2cWrite(CONTROL, READ_PRESSURE+(MODE_ULTRA_HIGHRES << 6));
 	delay_ms(26);
-	uint8_t r1 = i2cRead(0xF6);
-	uint8_t r2 = i2cRead(0xF7);
-	uint8_t r3 = i2cRead(0xF8);
-
-
-/*	up = ((r1<<16) + (r2<<8)+ r3) >> (8-MODE_ULTRA_HIGHRES);
-	//draw_number_8x6(60,70, up, 6,0,255,255,0);
-
-
+	up = i2cReads24(0xF6) >> (8-MODE_ULTRA_HIGHRES);
+	
 	// calculate true pressure
 	b6 = b5 - 4000;             // b5 is updated by calcTrueTemperature().
 	x1 = (b2* (b6 * b6 >> 12)) >> 11;
@@ -137,13 +118,15 @@ void BMP085_readPressure(void) {
 	x1 = (x1 * 3038) >> 16;
 	x2 = (-7357 * p) >> 16;
 	uint32_t pressure = p + ((x1 + x2 + 3791) >> 4);
+
+
 	int32_t centimeters = 0;
 	centimeters = 4433000 * (1 - pow((pressure / (float)99612), 0.1903f));  
-	lcdFillRGB(0,0,0);
-	draw_number_8x6(60,80, pressure, 6,0,255,255,0);
-	draw_number_8x6(60,90, centimeters, 6,0,255,0,255);
+//	lcdFillRGB(0,0,0);
+//	draw_number_8x6(60,80, pressure, 6,0,255,255,0);
+//	draw_number_8x6(60,90, centimeters, 6,0,255,0,255);
 
-/
+/*
 	int centimeters
 	samples[index++] = centimeters;
 	index %= 10;

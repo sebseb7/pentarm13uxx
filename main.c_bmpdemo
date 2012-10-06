@@ -1,0 +1,116 @@
+#include <math.h>
+#include "main.h"
+#include "drivers/ssd1351.h"
+#include "drivers/i2c.h"
+#include "drivers/display/text.h"
+#include "drivers/display/wuline.h"
+#include "drivers/display/circle.h"
+#include "libs/reverse.h"
+#include "drivers/usb_cdc.h"
+#include "drivers/bmp085.h"
+#include "stdio.h"
+
+/*
+
+	data sheet  : http://www.nxp.com/documents/data_sheet/LPC1315_16_17_45_46_47.pdf
+	user manual : http://www.nxp.com/documents/user_manual/UM10524.pdf
+
+
+	led1 : pin 33 (0_12)
+	led2 : pin 35 (0_14)
+
+*/
+
+
+
+volatile uint32_t msTicks = 0;
+
+void SysTick_Handler(void) {
+	msTicks++;
+}
+
+void delay_ms(uint32_t ms) {
+	uint32_t now = msTicks;
+	while ((msTicks-now) < ms);
+}
+
+
+int main(void) {
+
+	
+	SystemCoreClockUpdate();
+	SysTick_Config(SystemCoreClock/1000);
+
+	// clock to GPIO
+	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<6);
+
+	// configure the two LEDs PINs as GPIO (they default to jtag)
+	LPC_IOCON->TMS_PIO0_12  &= ~0x07;
+	LPC_IOCON->TMS_PIO0_12  |= 0x01;
+	LPC_IOCON->TRST_PIO0_14  &= ~0x07;
+	LPC_IOCON->TRST_PIO0_14  |= 0x01;
+
+	//data direction: output
+	LPC_GPIO->DIR[0] |= (1<<12);
+	LPC_GPIO->DIR[0] |= (1<<14);
+	LPC_GPIO->B0[12] = 0;
+
+	//oled
+	LPC_IOCON->SWCLK_PIO0_10  &= ~0x07;
+	LPC_IOCON->SWCLK_PIO0_10  |= 0x01;
+	//output for oled lines
+	LPC_GPIO->DIR[0] |= (1<<6);
+	LPC_GPIO->DIR[0] |= (1<<7);
+	LPC_GPIO->DIR[0] |= (1<<8);
+	LPC_GPIO->DIR[0] |= (1<<9);
+	LPC_GPIO->DIR[0] |= (1<<10);
+
+	delay_ms(50);
+
+	lcdInit();
+
+	delay_ms(50);
+
+
+	if ( I2CInit( (uint32_t)I2CMASTER ) == FALSE )	/* initialize I2c */
+	{
+		draw_text_8x6(10,10,"i2c err", 255,0,0);
+		while ( 1 );				/* Fatal error */
+	}
+
+	// 11 -> 104
+	// 1 => 3
+	// 60 -> 16
+	// 119 -> 0
+
+
+	delay_ms(100);
+
+	BMP085_getCalData();
+
+
+
+	usb_init();
+
+	uint16_t temperature = 0;
+	while(1)
+	{
+
+		BMP085_readTemperature();
+		draw_number_8x6(60,10, temperature, 6,0,0,0,0);
+		temperature = ((b5 + 8) >> 4);
+		draw_number_8x6(60,10, temperature, 6,0,255,255,255);
+
+		BMP085_readPressure();
+		
+		
+		
+		char s[10];
+		sprintf(s, "%u\n", temperature);
+		usb_send_str(s);
+		delay_ms(200);
+
+		LPC_GPIO->NOT[0] |= (1<<14);
+	}
+}
+

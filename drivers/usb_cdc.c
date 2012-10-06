@@ -74,8 +74,14 @@ void usb_send_str(char *text)
 	
 	int len = strlen(text);
 
+	for(int u = 0;u < len;u++)
+	{
+		pVcom->txBuf[u] = text[u];
+	}
+
+
 	pVcom->txlen -= pUsbApi->hw->WriteEP (pVcom->hUsb, USB_CDC_EP_BULK_IN, 
-			text, len);   
+			 pVcom->txBuf, len);   
 }
 
 ErrorCode_t VCOM_SendBreak (USBD_HANDLE_T hCDC, uint16_t mstime)
