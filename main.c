@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /*
 
 	data sheet  : http://www.nxp.com/documents/data_sheet/LPC1315_16_17_45_46_47.pdf
@@ -26,11 +25,11 @@ void delay_ms(uint32_t ms) {
 }
 
 int main(void) {
-	
-	
+
+
 	SystemCoreClockUpdate();
 	SysTick_Config(SystemCoreClock/1000);
-	
+
 	// clock to GPIO
 	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<6);
 
@@ -43,14 +42,15 @@ int main(void) {
 	//data direction: output
 	LPC_GPIO->DIR[0] |= (1<<12);
 	LPC_GPIO->DIR[0] |= (1<<14);
+		
+	LPC_GPIO->B0[12] = 1;
 
 	while(1)
 	{
-		LPC_GPIO->B0[12] = 1;
-		LPC_GPIO->B0[14] = 0;
+
+		LPC_GPIO->NOT[0] = 1<<12;
 		delay_ms(200);
-		LPC_GPIO->B0[12] = 0;
-		LPC_GPIO->B0[14] = 1;
+		LPC_GPIO->NOT[0] = 1<<14;
 		delay_ms(200);
 	}
 }
