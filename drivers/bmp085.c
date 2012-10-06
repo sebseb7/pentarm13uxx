@@ -1,5 +1,6 @@
 #include <math.h>
-#include "drivers/i2c.h"
+#include "i2c.h"
+#include "bmp085.h"
 #include "libs/reverse.h"
 
 extern volatile uint32_t I2CCount;
@@ -11,7 +12,7 @@ extern volatile uint32_t I2CReadLength, I2CWriteLength;
 
 
 
-void i2cWrite(uint8_t reg, uint8_t value)
+static void i2cWrite(uint8_t reg, uint8_t value)
 {
 	I2CWriteLength = 3;
 	I2CReadLength = 0;
@@ -20,7 +21,7 @@ void i2cWrite(uint8_t reg, uint8_t value)
 	I2CMasterBuffer[2] = value;
 	I2CEngine();
 }
-uint8_t i2cRead(uint8_t reg)
+static uint8_t i2cRead(uint8_t reg)
 {
 	I2CSlaveBuffer[0]=0;
 	I2CWriteLength = 2;
@@ -31,7 +32,7 @@ uint8_t i2cRead(uint8_t reg)
 	I2CEngine();
 	return I2CSlaveBuffer[0];
 }
-uint16_t i2cRead16(uint8_t reg)
+static uint16_t i2cRead16(uint8_t reg)
 {
 	I2CSlaveBuffer[0]=0;
 	I2CSlaveBuffer[1]=0;
@@ -43,7 +44,7 @@ uint16_t i2cRead16(uint8_t reg)
 	I2CEngine();
 	return I2CSlaveBuffer[0] << 8 | I2CSlaveBuffer[1];
 }
-int16_t i2cReads16(uint8_t reg)
+static int16_t i2cReads16(uint8_t reg)
 {
 	I2CSlaveBuffer[0]=0;
 	I2CSlaveBuffer[1]=0;
@@ -55,7 +56,7 @@ int16_t i2cReads16(uint8_t reg)
 	I2CEngine();
 	return I2CSlaveBuffer[0] << 8 | I2CSlaveBuffer[1];
 }
-int32_t i2cReads24(uint8_t reg)
+static int32_t i2cReads24(uint8_t reg)
 {
 	I2CSlaveBuffer[0]=0;
 	I2CSlaveBuffer[1]=0;
