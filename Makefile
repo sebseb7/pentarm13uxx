@@ -9,11 +9,11 @@ OPTIMIZATION = 1
 SRC=$(wildcard core/*.c *.c)
 
 #DRIVERS to USE:
-SRC+= drivers/ssd1351.c drivers/display/circle.c drivers/display/font8x6.c drivers/display/text.c drivers/display/wuline.c 
-SRC+= libs/stdio.c
-SRC+= drivers/n35p112.c
-SRC+= drivers/i2c.c
-SRC+= libs/reverse.c
+#SRC+= drivers/ssd1351.c drivers/display/circle.c drivers/display/font8x6.c drivers/display/text.c drivers/display/wuline.c 
+#SRC+= libs/stdio.c
+#SRC+= drivers/n35p112.c
+#SRC+= drivers/i2c.c
+#SRC+= libs/reverse.c
 
 OBJECTS= $(SRC:.c=.o) 
 LSSFILES= $(SRC:.c=.lst) 
