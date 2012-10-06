@@ -8,7 +8,7 @@ extern volatile uint8_t I2CSlaveBuffer[BUFSIZE];
 extern volatile uint32_t I2CMasterState;
 extern volatile uint32_t I2CReadLength, I2CWriteLength;
 
-void i2cWrite(uint8_t reg, uint8_t value)
+static void i2cWrite(uint8_t reg, uint8_t value)
 {
 	I2CWriteLength = 3;
 	I2CReadLength = 0;
@@ -17,7 +17,7 @@ void i2cWrite(uint8_t reg, uint8_t value)
 	I2CMasterBuffer[2] = value;
 	I2CEngine();
 }
-uint8_t i2cRead(uint8_t reg)
+static uint8_t i2cRead(uint8_t reg)
 {
 	I2CWriteLength = 2;
 	I2CReadLength = 1;
