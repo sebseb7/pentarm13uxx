@@ -72,6 +72,17 @@ void BMP085_getCalData(void) {
 	mb = i2cReads16(CAL_MB);
 	mc = i2cReads16(CAL_MC);
 	md = i2cReads16(CAL_MD);
+/*	draw_number_8x6(0,0, ac1, 6,0,255,255,0);
+	draw_number_8x6(0,10, ac2, 6,0,255,255,0);
+	draw_number_8x6(0,20, ac3, 6,0,255,255,0);
+	draw_number_8x6(0,30, ac4, 6,0,255,255,0);
+	draw_number_8x6(0,40, ac5, 6,0,255,255,0);
+	draw_number_8x6(0,50, ac6, 6,0,255,255,0);
+	draw_number_8x6(0,60, b1, 6,0,255,255,0);
+	draw_number_8x6(0,70, b2, 6,0,255,255,0);
+	draw_number_8x6(0,80, mb, 6,0,255,255,0);
+	draw_number_8x6(0,90, mc, 6,0,255,255,0);
+	draw_number_8x6(0,100, md, 6,0,255,255,0);*/
 }
 
 void BMP085_readTemperature(void){
@@ -81,7 +92,9 @@ void BMP085_readTemperature(void){
 	//read Raw Temperature
 	i2cWrite(CONTROL, READ_TEMPERATURE);
 	delay_ms(7);                          // min. 4.5ms read Temp delay
-	ut = i2cReads16(0xF6);
+	ut = i2cRead16(0xF6);
+
+//	draw_number_8x6(60,00, ut, 6,0,255,255,0);
 
 	// calculate temperature
 	x1 = ((long)ut - ac6) * ac5 >> 15;
