@@ -30,6 +30,24 @@ price of the eval board: ~$15
 
 ####BOM:
 
+* C1,C2 : 22pF 0402
+* C3,C4 : 100nF 0402
+* C6,C8 : 10nF 0402
+* C5,C7 : 1µF 0805
+* R1 : 1k5 0402
+* R2,R3,R6,R7 : 150R 0402
+* R4,R5 : 33R 0402
+* R8,R9,R10 : 15k 0402
+* T1 : Si3102DS SOT23
+* Q1 : 12Mhz MT
+* IC1 : lpc1347 QFP48
+* IC2 : LT1763CS8-3.3 SOIC8
+* X1 : Mini USB Connector SMD
+* X2,X3 : Pin-Header 10 Pin
+* X4 : Pin Header 2 Pin
+* X5,X6 : Pin Header 1 Pin
+* LED1,LED2 : Smd LED 0805
+* SW1,SW2,RST : MCTAEF-25N
 
 - - -
 
