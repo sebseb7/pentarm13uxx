@@ -34,4 +34,5 @@ user manual : http://www.nxp.com/documents/user_manual/UM10524.pdf
   
 - - -   
 ![pcb](/sebseb7/pentarm13uxx/raw/master/pcb.jpg)
-![brd](/sebseb7/pentarm13uxx/raw/master/brd.jpg)
+![brd](/sebseb7/pentarm13uxx/raw/master/brd.png)
+![brd2](/sebseb7/pentarm13uxx/raw/master/brd2.png)
