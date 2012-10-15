@@ -8584,7 +8584,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="+3V2" library="supply1" deviceset="+3V3" device=""/>
 <part name="+3V4" library="supply1" deviceset="+3V3" device=""/>
-<part name="R1" library="rcl" deviceset="R-EU_" device="R0402" value="15k"/>
+<part name="R10" library="rcl" deviceset="R-EU_" device="R0402" value="15k"/>
 <part name="JP1" library="pinhead-2" deviceset="PINHD-1X10" device="_2.54"/>
 <part name="JP2" library="pinhead-2" deviceset="PINHD-1X10" device="_2.54"/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
@@ -8602,14 +8602,14 @@ We've spent an enormous amount of time creating and checking these footprints an
 <part name="RST" library="seb" deviceset="SWITCH_MCTAEF" device=""/>
 <part name="BL/SW2" library="seb" deviceset="SWITCH_MCTAEF" device=""/>
 <part name="SW1" library="seb" deviceset="SWITCH_MCTAEF" device=""/>
-<part name="C3" library="rcl" deviceset="C-EU" device="C0402" value="22pF"/>
+<part name="C2" library="rcl" deviceset="C-EU" device="C0402" value="22pF"/>
 <part name="C1" library="rcl" deviceset="C-EU" device="C0402" value="22pF"/>
-<part name="C2" library="rcl" deviceset="C-EU" device="C0402" value="100nF"/>
+<part name="C3" library="rcl" deviceset="C-EU" device="C0402" value="100nF"/>
 <part name="C4" library="rcl" deviceset="C-EU" device="C0402" value="100nF"/>
 <part name="R6" library="rcl" deviceset="R-EU_" device="R0402" value="150R"/>
 <part name="R7" library="rcl" deviceset="R-EU_" device="R0402" value="150R"/>
 <part name="Q1" library="seb" deviceset="MT-OSCILLATOR" device="" value="12Mhz"/>
-<part name="R9" library="rcl" deviceset="R-EU_" device="R0402" value="1k5"/>
+<part name="R1" library="rcl" deviceset="R-EU_" device="R0402" value="1k5"/>
 <part name="IC2" library="linear-technology" deviceset="LT1763CS8" device="" technology="-3.3"/>
 <part name="C5" library="SparkFun" deviceset="CAP" device="0805" value="1µF"/>
 <part name="GND4" library="SparkFun" deviceset="GND" device=""/>
@@ -8625,7 +8625,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="P+5" library="supply1" deviceset="+5V" device=""/>
 <part name="R8" library="rcl" deviceset="R-EU_" device="R0402" value="15k"/>
-<part name="R10" library="rcl" deviceset="R-EU_" device="R0402" value="15k"/>
+<part name="R9" library="rcl" deviceset="R-EU_" device="R0402" value="15k"/>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="IC1" library="microbuilder" deviceset="LPC1347_QFP48" device=""/>
@@ -8648,7 +8648,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <instance part="GND3" gate="1" x="-73.66" y="254"/>
 <instance part="+3V2" gate="G$1" x="-73.66" y="271.78"/>
 <instance part="+3V4" gate="G$1" x="177.8" y="144.78" rot="R180"/>
-<instance part="R1" gate="G$1" x="177.8" y="154.94" rot="R270"/>
+<instance part="R10" gate="G$1" x="177.8" y="154.94" rot="R270"/>
 <instance part="JP1" gate="A" x="165.1" y="251.46" rot="R180"/>
 <instance part="JP2" gate="A" x="215.9" y="254" rot="MR0"/>
 <instance part="GND5" gate="1" x="149.86" y="162.56" rot="R270"/>
@@ -8672,14 +8672,14 @@ We've spent an enormous amount of time creating and checking these footprints an
 <instance part="SW1" gate="G$1" x="167.64" y="172.72" smashed="yes" rot="MR0">
 <attribute name="NAME" x="159.385" y="168.91" size="1.778" layer="95" rot="MR0"/>
 </instance>
-<instance part="C3" gate="G$1" x="-78.74" y="226.06" rot="R90"/>
+<instance part="C2" gate="G$1" x="-78.74" y="226.06" rot="R90"/>
 <instance part="C1" gate="G$1" x="-78.74" y="231.14" rot="R90"/>
-<instance part="C2" gate="G$1" x="-73.66" y="261.62" rot="R180"/>
+<instance part="C3" gate="G$1" x="-73.66" y="261.62" rot="R180"/>
 <instance part="C4" gate="G$1" x="-66.04" y="261.62" rot="R180"/>
 <instance part="R6" gate="G$1" x="251.46" y="254" rot="R180"/>
 <instance part="R7" gate="G$1" x="251.46" y="256.54" rot="R180"/>
 <instance part="Q1" gate="G$1" x="-68.58" y="228.6" rot="R90"/>
-<instance part="R9" gate="G$1" x="-73.66" y="180.34" rot="R270"/>
+<instance part="R1" gate="G$1" x="-73.66" y="180.34" rot="R270"/>
 <instance part="IC2" gate="G$1" x="193.04" y="210.82"/>
 <instance part="C5" gate="G$1" x="167.64" y="203.2"/>
 <instance part="GND4" gate="1" x="160.02" y="190.5"/>
@@ -8699,7 +8699,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <attribute name="VALUE" x="228.6" y="274.32" size="1.778" layer="96"/>
 </instance>
 <instance part="R8" gate="G$1" x="-43.18" y="254" rot="R90"/>
-<instance part="R10" gate="G$1" x="-43.18" y="264.16" rot="R270"/>
+<instance part="R9" gate="G$1" x="-43.18" y="264.16" rot="R270"/>
 <instance part="P+1" gate="1" x="-43.18" y="271.78"/>
 <instance part="GND11" gate="1" x="-43.18" y="246.38"/>
 <instance part="IC1" gate="G$1" x="63.5" y="213.36"/>
@@ -8721,7 +8721,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="-68.58" y1="226.06" x2="-55.88" y2="226.06" width="0.1524" layer="91"/>
 <wire x1="-73.66" y1="226.06" x2="-68.58" y2="226.06" width="0.1524" layer="91"/>
 <junction x="-68.58" y="226.06"/>
-<pinref part="C3" gate="G$1" pin="2"/>
+<pinref part="C2" gate="G$1" pin="2"/>
 <pinref part="Q1" gate="G$1" pin="1"/>
 <label x="-63.5" y="226.06" size="1.778" layer="95"/>
 </segment>
@@ -8752,7 +8752,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="-81.28" y1="226.06" x2="-81.28" y2="231.14" width="0.1524" layer="91"/>
 <junction x="-81.28" y="226.06"/>
 <pinref part="GND2" gate="1" pin="GND"/>
-<pinref part="C3" gate="G$1" pin="1"/>
+<pinref part="C2" gate="G$1" pin="1"/>
 <pinref part="C1" gate="G$1" pin="1"/>
 </segment>
 <segment>
@@ -8761,7 +8761,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="-66.04" y1="259.08" x2="-66.04" y2="256.54" width="0.1524" layer="91"/>
 <junction x="-73.66" y="256.54"/>
 <pinref part="GND3" gate="1" pin="GND"/>
-<pinref part="C2" gate="G$1" pin="1"/>
+<pinref part="C3" gate="G$1" pin="1"/>
 <pinref part="C4" gate="G$1" pin="1"/>
 </segment>
 <segment>
@@ -8853,7 +8853,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <segment>
 <wire x1="177.8" y1="149.86" x2="177.8" y2="147.32" width="0.1524" layer="91"/>
 <pinref part="+3V4" gate="G$1" pin="+3V3"/>
-<pinref part="R1" gate="G$1" pin="2"/>
+<pinref part="R10" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="+3V7" gate="G$1" pin="+3V3"/>
@@ -8866,7 +8866,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <segment>
 <wire x1="-73.66" y1="269.24" x2="-73.66" y2="266.7" width="0.1524" layer="91"/>
 <pinref part="+3V2" gate="G$1" pin="+3V3"/>
-<pinref part="C2" gate="G$1" pin="2"/>
+<pinref part="C3" gate="G$1" pin="2"/>
 <pinref part="C4" gate="G$1" pin="2"/>
 <wire x1="-73.66" y1="269.24" x2="-66.04" y2="269.24" width="0.1524" layer="91"/>
 <junction x="-73.66" y="269.24"/>
@@ -8921,7 +8921,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="177.8" y1="162.56" x2="177.8" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="177.8" y1="162.56" x2="172.72" y2="162.56" width="0.1524" layer="91"/>
 <junction x="177.8" y="162.56"/>
-<pinref part="R1" gate="G$1" pin="1"/>
+<pinref part="R10" gate="G$1" pin="1"/>
 <pinref part="RST" gate="G$1" pin="2"/>
 <label x="180.34" y="162.56" size="1.778" layer="95"/>
 </segment>
@@ -9102,7 +9102,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <pinref part="JP6" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="R10" gate="G$1" pin="1"/>
+<pinref part="R9" gate="G$1" pin="1"/>
 <pinref part="P+1" gate="1" pin="+5V"/>
 </segment>
 <segment>
@@ -9164,7 +9164,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="-73.66" y1="185.42" x2="-66.04" y2="185.42" width="0.1524" layer="91"/>
 <junction x="-73.66" y="185.42"/>
 <pinref part="R5" gate="G$1" pin="2"/>
-<pinref part="R9" gate="G$1" pin="1"/>
+<pinref part="R1" gate="G$1" pin="1"/>
 <pinref part="C9" gate="G$1" pin="1"/>
 <wire x1="-83.82" y1="185.42" x2="-73.66" y2="185.42" width="0.1524" layer="91"/>
 <junction x="-83.82" y="185.42"/>
@@ -9314,7 +9314,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <net name="N$20" class="0">
 <segment>
 <wire x1="-73.66" y1="175.26" x2="-73.66" y2="172.72" width="0.1524" layer="91"/>
-<pinref part="R9" gate="G$1" pin="2"/>
+<pinref part="R1" gate="G$1" pin="2"/>
 <pinref part="T1" gate="G$1" pin="D"/>
 </segment>
 </net>
@@ -9347,7 +9347,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="-35.56" y1="259.08" x2="-43.18" y2="259.08" width="0.1524" layer="91"/>
 <junction x="-43.18" y="259.08"/>
 <pinref part="R8" gate="G$1" pin="2"/>
-<pinref part="R10" gate="G$1" pin="2"/>
+<pinref part="R9" gate="G$1" pin="2"/>
 <label x="-38.1" y="259.08" size="1.778" layer="95"/>
 </segment>
 <segment>
