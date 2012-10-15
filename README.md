@@ -28,6 +28,11 @@ price of the eval board: ~$15
 
 - - -
 
+####BOM:
+
+
+- - -
+
 data sheet  : http://www.nxp.com/documents/data_sheet/LPC1315_16_17_45_46_47.pdf
 
 user manual : http://www.nxp.com/documents/user_manual/UM10524.pdf
