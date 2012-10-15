@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.2">
+<eagle version="6.3">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -29,15 +29,15 @@
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="14" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="14" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="10" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="14" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="12" fill="1" visible="yes" active="yes"/>
-<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
 <layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
@@ -196,7 +196,7 @@
 <text x="37" y="17.25" size="1" layer="22" font="vector" rot="MR0">https://github.com/sebseb7/pentarm13uxx</text>
 <rectangle x1="-0.125" y1="8" x2="2" y2="12" layer="29"/>
 <text x="21.875" y="10.25" size="0.8128" layer="27" font="vector">LPC1347</text>
-<text x="13.125" y="8.75" size="0.8128" layer="27" font="vector">12Mhz</text>
+<text x="13.5" y="8.625" size="0.8128" layer="27" font="vector">12Mhz</text>
 <rectangle x1="-0.75" y1="0.125" x2="39.125" y2="24.75" layer="38"/>
 </plain>
 <libraries>
@@ -936,7 +936,7 @@ design rules under a new name.</description>
 <elements>
 <element name="R10" library="rcl" package="R0402" value="15k" x="11.125" y="14.475" smashed="yes" rot="R180">
 <attribute name="NAME" x="9.778" y="14.6845" size="0.7" layer="25" font="vector" ratio="13" rot="R180"/>
-<attribute name="VALUE" x="12.603" y="14.979" size="0.8128" layer="27" font="vector" rot="R180"/>
+<attribute name="VALUE" x="12.353" y="14.854" size="0.8128" layer="27" font="vector" rot="R180"/>
 </element>
 <element name="JP1" library="pinhead-2" package="1X10" value="" x="26.1" y="2.265" smashed="yes" rot="R180">
 <attribute name="VALUE" x="38.8" y="5.44" size="1.27" layer="27" rot="R180"/>
@@ -962,11 +962,11 @@ design rules under a new name.</description>
 </element>
 <element name="R4" library="rcl" package="R0402" value="33R" x="10.425" y="12.275" smashed="yes" rot="R180">
 <attribute name="NAME" x="13.06" y="12.64" size="0.7" layer="25" font="vector" ratio="13" rot="R180"/>
-<attribute name="VALUE" x="11.31" y="12.805" size="0.8128" layer="27" font="vector" rot="R180"/>
+<attribute name="VALUE" x="11.435" y="12.68" size="0.8128" layer="27" font="vector" rot="R180"/>
 </element>
 <element name="R5" library="rcl" package="R0402" value="33R" x="10.4" y="10.875" smashed="yes" rot="R180">
 <attribute name="NAME" x="11.715" y="10.51" size="0.7" layer="25" font="vector" ratio="13"/>
-<attribute name="VALUE" x="11.16" y="11.405" size="0.8128" layer="27" font="vector" rot="R180"/>
+<attribute name="VALUE" x="11.535" y="11.28" size="0.8128" layer="27" font="vector" rot="R180"/>
 </element>
 <element name="RST" library="seb" package="SWITCH_MCTAEF" value="SWITCH_MCTAEF" x="15.625" y="16.45" smashed="yes" rot="R180">
 <attribute name="NAME" x="14.9" y="19.3" size="0.7" layer="25" font="vector" ratio="13" rot="R180"/>
@@ -979,7 +979,7 @@ design rules under a new name.</description>
 </element>
 <element name="C2" library="rcl" package="C0402" value="22pF" x="14.95" y="6.275" smashed="yes">
 <attribute name="NAME" x="16.89" y="5.665" size="0.7" layer="25" font="vector" ratio="13" rot="R90"/>
-<attribute name="VALUE" x="12.715" y="5.72" size="0.8128" layer="27" font="vector"/>
+<attribute name="VALUE" x="13.34" y="5.845" size="0.8128" layer="27" font="vector"/>
 </element>
 <element name="C1" library="rcl" package="C0402" value="22pF" x="15.3" y="12.55" smashed="yes" rot="R270">
 <attribute name="NAME" x="16.065" y="11.535" size="0.7" layer="25" font="vector" ratio="13"/>
@@ -991,15 +991,15 @@ design rules under a new name.</description>
 </element>
 <element name="C4" library="rcl" package="C0402" value="100nF" x="24.3" y="17.875" smashed="yes" rot="R270">
 <attribute name="NAME" x="23.79" y="19.06" size="0.7" layer="25" font="vector" ratio="13"/>
-<attribute name="VALUE" x="24.02" y="19.885" size="0.8128" layer="27" font="vector" rot="R270"/>
+<attribute name="VALUE" x="23.895" y="19.76" size="0.8128" layer="27" font="vector" rot="R270"/>
 </element>
 <element name="R6" library="rcl" package="R0402" value="150R" x="22.4" y="18.675" smashed="yes" rot="R90">
 <attribute name="NAME" x="22.765" y="16.315" size="0.7" layer="25" font="vector" ratio="13" rot="R90"/>
-<attribute name="VALUE" x="22.68" y="17.54" size="0.8128" layer="27" font="vector" rot="R90"/>
+<attribute name="VALUE" x="22.695" y="19.835" size="0.8128" layer="27" font="vector" rot="R270"/>
 </element>
 <element name="R7" library="rcl" package="R0402" value="150R" x="20.85" y="19.3" smashed="yes" rot="R90">
 <attribute name="NAME" x="21.215" y="16.94" size="0.7" layer="25" font="vector" ratio="13" rot="R90"/>
-<attribute name="VALUE" x="21.38" y="17.915" size="0.8128" layer="27" font="vector" rot="R90"/>
+<attribute name="VALUE" x="21.38" y="18.29" size="0.8128" layer="27" font="vector" rot="R90"/>
 </element>
 <element name="Q1" library="seb" package="MT" value="12Mhz" x="14.875" y="9.075" smashed="yes" rot="R270"/>
 <element name="R1" library="rcl" package="R0402" value="1k5" x="10.425" y="9.325" smashed="yes">
@@ -1008,7 +1008,7 @@ design rules under a new name.</description>
 </element>
 <element name="IC2" library="linear-technology" package="SOIC8" value="LT1763CS8-3.3" x="7.15" y="18.225" smashed="yes" rot="R90">
 <attribute name="NAME" x="1.445" y="19.692" size="0.7" layer="25" font="vector" ratio="13"/>
-<attribute name="VALUE" x="12.305" y="18.537" size="0.8128" layer="27" font="vector" rot="R180"/>
+<attribute name="VALUE" x="12.555" y="18.287" size="0.8128" layer="27" font="vector" rot="R180"/>
 </element>
 <element name="C5" library="SparkFun" package="0805" value="1µF" x="1.425" y="17.4" smashed="yes" rot="R270">
 <attribute name="NAME" x="2.2505" y="18.162" size="0.7" layer="25" font="vector" ratio="13" rot="R270"/>
@@ -1016,30 +1016,30 @@ design rules under a new name.</description>
 </element>
 <element name="C6" library="rcl" package="C0402" value="10nF" x="12.325" y="20.15" smashed="yes">
 <attribute name="NAME" x="12.315" y="20.91" size="0.7" layer="25" font="vector" ratio="13"/>
-<attribute name="VALUE" x="10.44" y="19.62" size="0.8128" layer="27" font="vector"/>
+<attribute name="VALUE" x="11.065" y="19.745" size="0.8128" layer="27" font="vector"/>
 </element>
 <element name="JP4" library="pinhead-2" package="1X02" value="" x="3.25" y="2.265" smashed="yes">
 <attribute name="VALUE" x="0.71" y="-0.91" size="1.27" layer="27"/>
 </element>
 <element name="C7" library="SparkFun" package="0805" value="1µF" x="11.25" y="22.75" smashed="yes" rot="R90">
 <attribute name="NAME" x="12.0755" y="23.512" size="0.7" layer="25" font="vector" ratio="13" rot="R270"/>
-<attribute name="VALUE" x="11.522" y="21.734" size="0.8128" layer="27" font="vector" rot="R90"/>
+<attribute name="VALUE" x="11.647" y="21.859" size="0.8128" layer="27" font="vector" rot="R90"/>
 </element>
 <element name="C8" library="rcl" package="C0402" value="10nF" x="9.375" y="22.5" smashed="yes" rot="R270">
 <attribute name="NAME" x="10.135" y="21.365" size="0.7" layer="25" font="vector" ratio="13" rot="R180"/>
-<attribute name="VALUE" x="8.97" y="24.51" size="0.8128" layer="27" font="vector" rot="R270"/>
+<attribute name="VALUE" x="8.97" y="24.635" size="0.8128" layer="27" font="vector" rot="R270"/>
 </element>
 <element name="T1" library="SparkFun" package="SOT23" value="Si2301DS" x="11.125" y="6.375" smashed="yes">
 <attribute name="NAME" x="9.407" y="7.764" size="0.7" layer="25" font="vector" ratio="13" rot="R270"/>
-<attribute name="VALUE" x="8.484" y="5.1845" size="0.8128" layer="27" font="vector"/>
+<attribute name="VALUE" x="8.984" y="4.8095" size="0.8128" layer="27" font="vector"/>
 </element>
 <element name="R8" library="rcl" package="R0402" value="15k" x="8.125" y="5.625" smashed="yes" rot="R270">
 <attribute name="NAME" x="8.76" y="7.74" size="0.7" layer="25" font="vector" ratio="13" rot="R180"/>
-<attribute name="VALUE" x="7.72" y="6.51" size="0.8128" layer="27" font="vector" rot="R270"/>
+<attribute name="VALUE" x="7.72" y="6.635" size="0.8128" layer="27" font="vector" rot="R270"/>
 </element>
 <element name="R9" library="rcl" package="R0402" value="15k" x="5.125" y="5" smashed="yes">
 <attribute name="NAME" x="5.885" y="6.615" size="0.7" layer="25" font="vector" ratio="13" rot="R180"/>
-<attribute name="VALUE" x="4.24" y="4.47" size="0.8128" layer="27" font="vector"/>
+<attribute name="VALUE" x="4.115" y="4.47" size="0.8128" layer="27" font="vector"/>
 </element>
 <element name="IC1" library="microbuilder" package="LQFP48" value="" x="24.6" y="10.675" smashed="yes">
 <attribute name="NAME" x="28.001" y="14.2251" size="0.7" layer="25" font="vector" ratio="13"/>
@@ -1053,11 +1053,11 @@ design rules under a new name.</description>
 </element>
 <element name="C9" library="rcl" package="C0402" value="22pF" x="6" y="8.875" smashed="yes" rot="R270">
 <attribute name="NAME" x="6.74" y="8.51" size="0.7" layer="25" font="vector" ratio="13"/>
-<attribute name="VALUE" x="5.47" y="11.135" size="0.8128" layer="27" font="vector" rot="R270"/>
+<attribute name="VALUE" x="5.47" y="10.26" size="0.8128" layer="27" font="vector" rot="R270"/>
 </element>
 <element name="C10" library="rcl" package="C0402" value="22pF" x="6" y="12" smashed="yes" rot="R270">
 <attribute name="NAME" x="6.74" y="11.76" size="0.7" layer="25" font="vector" ratio="12"/>
-<attribute name="VALUE" x="5.47" y="14.51" size="0.8128" layer="27" font="vector" rot="R270"/>
+<attribute name="VALUE" x="5.47" y="13.76" size="0.8128" layer="27" font="vector" rot="R270"/>
 </element>
 <element name="X1" library="SparkFun-Connectors" package="USB-MICROB" value="USB-MICROB" x="0.875" y="10" smashed="yes" rot="R270"/>
 <element name="U$1" library="seb" package="C3D2_LOGO" value="" x="12.625" y="10.625" rot="MR0"/>
