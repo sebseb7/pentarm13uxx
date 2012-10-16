@@ -45,7 +45,7 @@ price of the eval board: ~$15
 * X1 : Mini USB Connector SMD (farnell: 1125348)
 * X2,X3 : Pin-Header 10 Pin
 * X4 : Pin Header 2 Pin
-* X5,X6 : Pin Header 1 Pin
+* X5 : Pin Header 4 Pin
 * LED1,LED2 : Smd LED 0805
 * SW1,SW2,RST : MCTAEF-25N (farnell:1605484)
 
