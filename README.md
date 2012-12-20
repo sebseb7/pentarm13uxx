@@ -34,10 +34,9 @@ price of the eval board: ~$15
 * C3,C4 : 100nF 0402
 * C6,C8 : 10nF 0402
 * C5,C7 : 1µF 0805
-* R1 : 1k5 0402
 * R2,R3,R6,R7 : 150R 0402
 * R4,R5 : 33R 0402
-* R8,R9,R10 : 15k 0402
+* R1,R8,R9,R10 : 15k 0402
 * T1 : Si3102DS SOT23 (or other pfet)
 * Q1 : 12Mhz MT (farnell: 1842056)
 * IC1 : lpc1347 QFP48 (farnell: 2103477)
@@ -60,4 +59,3 @@ toolchain   : http://vedder.se/wp-content/uploads/2012/07/summon-arm-toolchain_m
 - - -   
 ![pcb](/sebseb7/pentarm13uxx/raw/master/doc/pcb.jpg)
 ![brd](/sebseb7/pentarm13uxx/raw/master/doc/brd.png)
-![brd2](/sebseb7/pentarm13uxx/raw/master/doc/brd2.png)
