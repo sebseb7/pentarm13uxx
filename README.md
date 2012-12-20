@@ -56,6 +56,6 @@ data sheet  : http://www.nxp.com/documents/data_sheet/LPC1315_16_17_45_46_47.pdf
 user manual : http://www.nxp.com/documents/user_manual/UM10524.pdf
   
 - - -   
-![pcb](/sebseb7/pentarm13uxx/raw/master/pcb.jpg)
-![brd](/sebseb7/pentarm13uxx/raw/master/brd.png)
-![brd2](/sebseb7/pentarm13uxx/raw/master/brd2.png)
+![pcb](/sebseb7/pentarm13uxx/raw/master/doc/pcb.jpg)
+![brd](/sebseb7/pentarm13uxx/raw/master/doc/brd.png)
+![brd2](/sebseb7/pentarm13uxx/raw/master/doc/brd2.png)
