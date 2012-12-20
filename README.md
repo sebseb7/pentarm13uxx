@@ -36,7 +36,8 @@ price of the eval board: ~$15
 * C5,C7 : 1µF 0805
 * R2,R3,R6,R7 : 150R 0402
 * R4,R5 : 33R 0402
-* R1,R8,R9,R10 : 15k 0402
+* R1,R8,R9 : 15k 0402
+* R10 : 1k5 0402
 * T1 : Si3102DS SOT23 (or other pfet)
 * Q1 : 12Mhz MT (farnell: 1842056)
 * IC1 : lpc1347 QFP48 (farnell: 2103477)
