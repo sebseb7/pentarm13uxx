@@ -1,7 +1,7 @@
 pentarm13uxx
 ============
 
-created a small template project (blinking led) for the new lpc1347 (successor of the popular lpc1343)
+a small template project (blinking led) for the new lpc1347 (successor of the popular lpc1343)
 
 including Makefile, linker-script and cmsis and microcontroler header files
 
@@ -54,7 +54,9 @@ price of the eval board: ~$15
 data sheet  : http://www.nxp.com/documents/data_sheet/LPC1315_16_17_45_46_47.pdf
 
 user manual : http://www.nxp.com/documents/user_manual/UM10524.pdf
-  
+
+toolchain   : http://vedder.se/wp-content/uploads/2012/07/summon-arm-toolchain_modified.zip
+
 - - -   
 ![pcb](/sebseb7/pentarm13uxx/raw/master/doc/pcb.jpg)
 ![brd](/sebseb7/pentarm13uxx/raw/master/doc/brd.png)
