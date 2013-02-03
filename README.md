@@ -58,5 +58,5 @@ user manual : http://www.nxp.com/documents/user_manual/UM10524.pdf
 toolchain   : https://github.com/esden/summon-arm-toolchain
 
 - - -   
-![pcb](/sebseb7/pentarm13uxx/raw/master/doc/pcb.jpg)
-![brd](/sebseb7/pentarm13uxx/raw/master/doc/brd.png)
+![pcb](https://raw.github.com/sebseb7/pentarm13uxx/master/doc/pcb.jpg)
+![brd](https://raw.github.com/sebseb7/pentarm13uxx/master/doc/brd.png)
