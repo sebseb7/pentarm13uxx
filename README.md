@@ -55,7 +55,7 @@ data sheet  : http://www.nxp.com/documents/data_sheet/LPC1315_16_17_45_46_47.pdf
 
 user manual : http://www.nxp.com/documents/user_manual/UM10524.pdf
 
-toolchain   : http://vedder.se/wp-content/uploads/2012/07/summon-arm-toolchain_modified.zip
+toolchain   : https://github.com/esden/summon-arm-toolchain
 
 - - -   
 ![pcb](/sebseb7/pentarm13uxx/raw/master/doc/pcb.jpg)
