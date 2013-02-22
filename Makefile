@@ -6,15 +6,15 @@ OPTIMIZATION = 1
 
 #########################################################################
 
-SRC=$(wildcard core/*.c *.c)
+SRC=$(wildcard core/*.c core/libs/*.c drivers/usb_cdc.c drivers/usb/cdc_desc.c *.c)
 
 
 OBJECTS= $(SRC:.c=.o) 
 LSSFILES= $(SRC:.c=.lst) 
-HEADERS=$(wildcard core/*.h *.h) 
+HEADERS=$(wildcard core/*.h core/inc/*.h drivers/usb_cdc.c *.h) 
 
 #  Compiler Options
-GCFLAGS = -std=gnu99 -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -I. -Icore
+GCFLAGS = -std=gnu99 -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -I. -Icore -Icore/inc
 # Warnings
 GCFLAGS += -Wstrict-prototypes -Wundef -Wall -Wextra -Wunreachable-code  
 # Optimizazions
