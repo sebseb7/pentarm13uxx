@@ -415,7 +415,7 @@ void set_timer32_match(uint8_t timer_num, uint8_t match_enable, uint8_t location
 	  }
 	  else if ( location == 1 )
 	  {
-#if __SWD_DISABLED
+#if defined(__SWD_DISABLED)
 		LPC_IOCON->SWDIO_PIO0_15     &= ~0x07;
 		LPC_IOCON->SWDIO_PIO0_15     |= 0x03;		/* Timer1_32 MAT2 */
 #endif
