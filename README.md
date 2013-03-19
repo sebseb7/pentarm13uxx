@@ -58,7 +58,7 @@ data sheet  : http://www.nxp.com/documents/data_sheet/LPC1315_16_17_45_46_47.pdf
 
 user manual : http://www.nxp.com/documents/user_manual/UM10524.pdf
 
-toolchain   : https://github.com/esden/summon-arm-toolchain
+toolchain   : https://launchpad.net/gcc-arm-embedded
 
 - - -   
 ![pcb](https://raw.github.com/sebseb7/pentarm13uxx/master/doc/pcb.jpg)
